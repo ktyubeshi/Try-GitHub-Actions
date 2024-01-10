@@ -1,0 +1,22 @@
+name: Python Script on PO File
+
+on: [push]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Python script on PO files
+      run: python scripts/po_format_validator.py
