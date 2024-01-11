@@ -20,7 +20,7 @@ print('Po file is correct. None of the unwanted headers are present.')
 
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    pofile = os.path.join(base_dir, '.\\po\\ja_JP.po')
+    pofile = os.path.join(base_dir, 'po', 'ja_JP.po')
 
     # Using the function
     existing_headers = check_po_headers(pofile)
